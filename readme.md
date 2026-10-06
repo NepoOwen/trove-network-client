@@ -48,7 +48,7 @@ Trove world server, plus hooks (hotkeys) for poking at that connection.
         ├── zlib/                     # from-scratch DEFLATE/INFLATE
         ├── frame/                    # [len][flag][ciphertext] segment framing
         ├── proto/                    # clean-room wire-format decoder/encoder + proto::dump()
-        └── xigncode/                 # anti-cheat heartbeat challenge solver (off-limits, see below)
+        └── xigncode/                 # anti-cheat heartbeat challenge solver (https://github.com/NepoOwen/trove-xigncode-heartbeat)
 ```
 
 ## How a run works
