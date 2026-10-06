@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{6ACD6F52-ACB9-4BFA-AB3C-51FFD8E83A93}</ProjectGuid>
+    <RootNamespace>network_nepofied</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>network-nepofied</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <LanguageStandard>stdcpp20</LanguageStandard>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)build\</OutDir>
+    <IntDir>$(SolutionDir)build\obj\</IntDir>
+    <TargetName>network-nepofied</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>ws2_32.lib;winhttp.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\app\session.cpp" />
+    <ClCompile Include="src\app\selftest.cpp" />
+    <ClCompile Include="src\network\connection.cpp" />
+    <ClCompile Include="src\network\log.cpp" />
+    <ClCompile Include="src\login\login.cpp" />
+    <ClCompile Include="src\auth\auth_handler.cpp" />
+    <ClCompile Include="src\auth\auth_messages.cpp" />
+    <ClCompile Include="src\world\world_handler.cpp" />
+    <ClCompile Include="src\world\world_messages.cpp" />
+    <ClCompile Include="src\world\post_login_handler.cpp" />
+    <ClCompile Include="src\api\api_handler.cpp" />
+    <ClCompile Include="src\api\api_messages.cpp" />
+    <ClCompile Include="src\api\hotkeys.cpp" />
+    <ClCompile Include="src\utils\net\net.cpp" />
+    <ClCompile Include="src\utils\crypto\crypto.cpp" />
+    <ClCompile Include="src\utils\frame\frame.cpp" />
+    <ClCompile Include="src\utils\zlib\zlib.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\app\session.hpp" />
+    <ClInclude Include="src\app\selftest.hpp" />
+    <ClInclude Include="src\network\connection.hpp" />
+    <ClInclude Include="src\network\log.hpp" />
+    <ClInclude Include="src\login\login.hpp" />
+    <ClInclude Include="src\auth\auth_handler.hpp" />
+    <ClInclude Include="src\auth\auth_messages.hpp" />
+    <ClInclude Include="src\world\world_handler.hpp" />
+    <ClInclude Include="src\world\world_messages.hpp" />
+    <ClInclude Include="src\world\post_login_handler.hpp" />
+    <ClInclude Include="src\api\api_handler.hpp" />
+    <ClInclude Include="src\api\api_messages.hpp" />
+    <ClInclude Include="src\api\hotkeys.hpp" />
+    <ClInclude Include="src\utils\net\net.hpp" />
+    <ClInclude Include="src\utils\crypto\crypto.hpp" />
+    <ClInclude Include="src\utils\frame\frame.hpp" />
+    <ClInclude Include="src\utils\zlib\zlib.hpp" />
+    <ClInclude Include="src\utils\zlib\inflate_stream.hpp" />
+    <ClInclude Include="src\utils\proto\proto.hpp" />
+    <ClInclude Include="src\utils\proto\type_names.hpp" />
+    <ClInclude Include="src\utils\xigncode\challenge.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
