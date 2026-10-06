@@ -1,4 +1,4 @@
-# network-nepofied
+# Trove Network Client (Standalone Client)
 
 A clean-room, reverse-engineered C++20 client for Trove's login/world network
 protocol. It authenticates against Glyph, logs into an auth server, completes
