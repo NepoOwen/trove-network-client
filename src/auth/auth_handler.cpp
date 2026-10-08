@@ -179,7 +179,7 @@ bool AuthHandler::try_server(const std::string& server, const std::string& xml, 
     resp1_token_ = 0; channel_id_.store(0); world_server_.clear(); world_found_ = false;
     username_seen_ = false; username_set_sent_ = false; region_seen_ = false;
 
-    std::vector<uint8_t> hs = build_handshake("STABLE-103-451");
+    std::vector<uint8_t> hs = build_handshake("STABLE-103-453");
     if (!conn_.send(frame::build_game(conn_.channel(), hs.data(), hs.size()))) return false;
     network::log_send("auth", "handshake", hs.size());
 

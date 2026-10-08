@@ -112,7 +112,7 @@ void WorldHandler::thread_main(std::string host, uint16_t port, uint64_t account
     pending_login_.field6 = sig;
     pending_login_.field7 = xml;
 
-    std::vector<uint8_t> hs = build_handshake("STABLE-103-451", account_id, email);
+    std::vector<uint8_t> hs = build_handshake("STABLE-103-453", account_id, email);
     if (!conn_.send(frame::build_game(conn_.channel(), hs.data(), hs.size()))) { net::cleanup(); std::exit(1); }
     network::log_send("world", "handshake", hs.size());
 
